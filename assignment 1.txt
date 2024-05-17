@@ -1,0 +1,321 @@
+1st program 
+
+message = "Welcome to Saveetha School of Engineering"
+for _ in range(5):
+    print(message)
+
+
+2nd program 
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def print_non_primes(A, B):
+    non_primes = []
+    for num in range(A, B + 1):
+        if not is_prime(num):
+            non_primes.append(num)
+    print(', '.join(map(str, non_primes)))
+
+# Sample Input
+A = 12
+B = 19
+
+# Function Call
+print_non_primes(A, B)
+
+
+3rd program 
+
+def is_leap_year(year):
+    """Check if a given year is a leap year."""
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return True
+    return False
+
+def adjust_anniversary_date(date_str):
+    """Adjust the anniversary date based on whether the year is a leap year or not."""
+    day, month, year = map(int, date_str.split('/'))
+    
+    if is_leap_year(year):
+        next_year = year + 1
+        print(f"Given Anniversary Year: Leap Year.")
+        print(f"Anniversary Date: {day:02}/{month:02}/{next_year}")
+    else:
+        previous_year = year - 1
+        print(f"Given Anniversary Year: Non Leap Year.")
+        print(f"Anniversary Date: {day:02}/{month:02}/{previous_year}")
+
+# Sample Input
+date_str = "04/11/1947"
+
+# Function Call
+adjust_anniversary_date(date_str)
+
+
+4th program 
+
+def sum_of_digits_to_single_digit(num):
+    """Function to reduce the sum of digits of a number to a single digit."""
+    while num >= 10:
+        num = sum(int(digit) for digit in str(num))
+    return num
+
+# Sample Input
+N = int(input("Enter N value: "))
+number = int(input(f"Enter {N} digit number: "))
+
+# Function Call
+single_digit_sum = sum_of_digits_to_single_digit(number)
+
+# Output
+print(f"Sum of {N} digit number: {single_digit_sum}")
+
+
+5th program 
+
+def is_armstrong_number(num):
+    """Check if a number is an Armstrong number."""
+    num_str = str(num)
+    num_digits = len(num_str)
+    sum_of_powers = sum(int(digit) ** num_digits for digit in num_str)
+    
+    return sum_of_powers == num
+
+# Input: Enter number
+number = int(input("Enter number: "))
+
+# Check if the number is an Armstrong number
+if is_armstrong_number(number):
+    print("Given number is Armstrong number")
+else:
+    print("Given number is not Armstrong number")
+
+
+6th program 
+
+def perform_operations(a, b):
+    print("Integer Operations:")
+    print(f"Addition: {a} + {b} = {a + b}")
+    print(f"Subtraction: {a} - {b} = {a - b}")
+    print(f"Multiplication: {a} * {b} = {a * b}")
+    print(f"Integer Division: {a} // {b} = {a // b}")
+    print(f"Floor Division: {a} / {b} = {a / b}")
+    print(f"Modulo Division: {a} % {b} = {a % b}")
+    print("\nFloat Operations:")
+    a_float = float(a)
+    b_float = float(b)
+    print(f"Addition: {a_float} + {b_float} = {a_float + b_float}")
+    print(f"Subtraction: {a_float} - {b_float} = {a_float - b_float}")
+    print(f"Multiplication: {a_float} * {b_float} = {a_float * b_float}")
+    print(f"Division: {a_float} / {b_float} = {a_float / b_float}")
+    print(f"Modulo Division: {a_float} % {b_float} = {a_float % b_float}")
+
+# Input numbers
+num1 = int(input("Enter first integer: "))
+num2 = int(input("Enter second integer: "))
+float1 = float(input("Enter first float: "))
+float2 = float(input("Enter second float: "))
+
+# Perform operations
+perform_operations(num1, num2)
+print("\n")
+perform_operations(float1, float2)
+
+
+7th program 
+
+def exchange_values(a, b):
+    print("Before exchange:")
+    print("a =", a)
+    print("b =", b)
+
+    # Using temporary variable to exchange values
+    temp = a
+    a = b
+    b = temp
+
+    print("\nAfter exchange:")
+    print("a =", a)
+    print("b =", b)
+
+# Input values
+a = int(input("Enter value for variable a: "))
+b = int(input("Enter value for variable b: "))
+
+# Call function to exchange values
+exchange_values(a, b)
+
+
+8th program 
+
+# Define a tuple
+my_tuple = (4, 7, 1, 9, 3, 6, 2)
+
+# i) Maximum and Minimum
+max_value = max(my_tuple)
+min_value = min(my_tuple)
+print("Maximum value:", max_value)
+print("Minimum value:", min_value)
+
+# ii) Sum of two tuples
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+sum_tuple = tuple1 + tuple2
+print("Sum of two tuples:", sum_tuple)
+
+# iii) Duplicate a tuple
+duplicate_tuple = my_tuple * 2
+print("Duplicated tuple:", duplicate_tuple)
+
+# iv) Slicing operator
+sliced_tuple = my_tuple[2:5]
+print("Sliced tuple:", sliced_tuple)
+
+# v) Obtaining a list from a tuple
+tuple_list = list(my_tuple)
+print("List obtained from tuple:", tuple_list)
+
+
+9th program 
+
+import random
+
+# Generate a random number between 1 and 99
+random_number = random.randint(1, 99)
+
+# Print the generated random number
+print("Random number:", random_number)
+
+
+10th program 
+
+def print_even_before_20(lst):
+    for num in lst:
+        if num == 20:
+            break
+        if num % 2 == 0:
+            print(num, end=" ")
+
+# Sample list
+my_list = [4, 8, 15, 16, 20, 12, 6, 10, 22, 18]
+
+# Print even numbers before first occurrence of 20
+print("Even numbers before first occurrence of 20:")
+print_even_before_20(my_list)
+
+
+11th program 
+
+def is_leap_year(year):
+    """Check if a given year is a leap year."""
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return True
+    return False
+
+def adjust_anniversary_date(date_str):
+    """Adjust the anniversary date based on whether the year is a leap year or not."""
+    day, month, year = map(int, date_str.split('/'))
+    
+    if is_leap_year(year):
+        next_year = year + 1
+        print(f"Given Anniversary Year: Leap Year.")
+        print(f"Anniversary Date: {day:02}/{month:02}/{next_year}")
+    else:
+        previous_year = year - 1
+        print(f"Given Anniversary Year: Non Leap Year.")
+        print(f"Anniversary Date: {day:02}/{month:02}/{previous_year}")
+
+# Sample Input
+date_str = input("Enter Date (DD/MM/YYYY): ")
+
+# Function Call
+adjust_anniversary_date(date_str)
+
+
+12th program 
+
+def is_perfect_number(n):
+    """Check if a given number is a perfect number."""
+    if n <= 0:
+        return False
+    divisors_sum = sum([i for i in range(1, n) if n % i == 0])
+    return divisors_sum == n
+
+# Sample Input
+given_number = int(input("Given Number: "))
+
+# Check if the number is a perfect number
+if is_perfect_number(given_number):
+    print("Its a Perfect Number")
+else:
+    print("Its not a Perfect Number")
+
+
+13th program 
+
+def generate_pythagorean_triplets(upper_limit):
+    triplets = []
+    for m in range(2, upper_limit):
+        for n in range(1, m):
+            a = m**2 - n**2
+            b = 2 * m * n
+            c = m**2 + n**2
+            if c <= upper_limit:
+                triplets.append((a, b, c))
+    return triplets
+
+# Input: Enter upper limit
+upper_limit = int(input("Enter upper limit: "))
+
+# Generate Pythagorean triplets
+pythagorean_triplets = generate_pythagorean_triplets(upper_limit)
+
+# Print Pythagorean triplets
+print("Pythagorean Triplets:")
+for triplet in pythagorean_triplets:
+    print(*triplet)
+
+
+14th program
+
+def is_harshad_number(n):
+    """Check if a given number is a Harshad number."""
+    digits_sum = sum(int(digit) for digit in str(n))
+    return n % digits_sum == 0
+
+# Sample Input
+number = int(input("Enter number: "))
+
+# Check if the number is a Harshad number
+if is_harshad_number(number):
+    print("Given number is Harshad number")
+else:
+    print("Given number is not Harshad number")
+
+
+15th program 
+
+def is_happy_number(n):
+    """Check if a given number is a happy number."""
+    visited = set()
+    while n != 1:
+        n = sum(int(digit)**2 for digit in str(n))
+        if n in visited:
+            return False
+        visited.add(n)
+    return True
+
+# Sample Input
+number = int(input("Enter number: "))
+
+# Check if the number is a happy number
+if is_happy_number(number):
+    print("Given number is happy number")
+else:
+    print("Given number is not happy number")
